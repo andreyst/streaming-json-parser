@@ -15,7 +15,7 @@ class TestDecoder(unittest.TestCase):
 
     @staticmethod
     def _decode_fixture(fixture_filename):
-        fp = open(fixture_filename, 'r')
+        fp = open(fixture_filename, mode='r')
         try:
             data_gen = iter(lambda: fp.read(4), '')
             decoder = Decoder(data_gen)
@@ -63,8 +63,8 @@ class TestDecoder(unittest.TestCase):
             with self.subTest(fixture_filename=os.path.basename(fixture_filename)):
                 try:
                     TestDecoder._decode_fixture(fixture_filename)
-                except UnicodeDecodeError:
-                    # These test may and should raise this exception
+                except (UnicodeDecodeError, ParseError):
+                    # These test may and should raise this exceptions
                     pass
 
     # Fixtures taken from https://github.com/nst/JSONTestSuite/
