@@ -21,15 +21,15 @@ def main():
         'python': python,
     }
     results = {k: [] for k in parsers.keys()}
-    print(results)
 
-    data = ['[' + ('{"a":1},' * 20000) + '0]']
+    data = '[' + ('{"a":1},' * 100000) + '0]'
 
     for k, parser in parsers.items():
-        start = time.time()
-        parser(data[0])
-        elapsed = time.time() - start
-        results[k].append(elapsed)
+        for i in range(10):
+            start = time.time()
+            parser(data)
+            elapsed = time.time() - start
+            results[k].append(elapsed)
 
     for name, r in results.items():
         r.sort()
