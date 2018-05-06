@@ -11,9 +11,11 @@ class Decoder:
 
     def decode(self):
         evt, res = self._parse_sub_tree()
+        # print("decode result: ", evt, res)
 
         try:
             evt, res = next(self.parser_gen)
+            # print("event after decoder loop: ", evt, res)
             raise ParseError("Extra data after close")
         except StopIteration:
             pass
@@ -25,11 +27,12 @@ class Decoder:
 
         while True:
             start = time.time()
-            print("parser_in_decoder: loop start")
+            # print("parser_in_decoder: loop start")
             evt_name, evt_param = next(self.parser_gen)
-            print("parser_in_decoder: loop end")
+            # print("event in decoder loop: ", evt_name, evt_param)
+            # print("parser_in_decoder: loop end")
             elapsed_time = time.time() - start
-            print("parser_in_decoder={}".format(elapsed_time))
+            # print("parser_in_decoder={}".format(elapsed_time))
             if evt_name == "object_start":
                 obj = {}
             elif evt_name == "object_key_end":
