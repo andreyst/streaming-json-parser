@@ -7,6 +7,10 @@ name = "pypi"
 requests = "*"
 "autopep8" = "*"
 simplejson = "*"
+naya = "*"
+six = "*"
+yajl-py = "*"
+jsonstreamer = "*"
 
 [dev-packages]
 

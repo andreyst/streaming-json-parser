@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "4175fe11eb61951b680219a235268dff61b79db4ad731dcf62ca2c2727b03b1c"
+            "sha256": "88bde627255a158fb30ff496a61b81ff5b2c97e32eb210bf4f5bc256ba23e77f"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,6 +16,12 @@
         ]
     },
     "default": {
+        "again": {
+            "hashes": [
+                "sha256:7c2740b69c7c469bfabbc680b526ed4d897337def6a4b3fab05e6e753a19300e"
+            ],
+            "version": "==1.2.21"
+        },
         "autopep8": {
             "hashes": [
                 "sha256:2284d4ae2052fedb9f466c09728e30d2e231cfded5ffd7b1a20c34123fdc4ba4"
@@ -43,6 +49,21 @@
                 "sha256:8c7309c718f94b3a625cb648ace320157ad16ff131ae0af362c9f21b80ef6ec4"
             ],
             "version": "==2.6"
+        },
+        "jsonstreamer": {
+            "hashes": [
+                "sha256:3dc31d4b93155fcaddcf59db60244b085e92703a6f00840b1a0f58d511d8be6c"
+            ],
+            "index": "pypi",
+            "version": "==1.3.6"
+        },
+        "naya": {
+            "hashes": [
+                "sha256:46b58028d1ef65a426940c177c48a777ef0105665958028df632907105504510",
+                "sha256:f8a5a36a9627246ff8a633b2427772f4a312900b4dc1559ca0a7e86afadb1037"
+            ],
+            "index": "pypi",
+            "version": "==1.0.0"
         },
         "pycodestyle": {
             "hashes": [
@@ -87,12 +108,27 @@
             "index": "pypi",
             "version": "==3.14.0"
         },
+        "six": {
+            "hashes": [
+                "sha256:70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9",
+                "sha256:832dc0e10feb1aa2c68dcc57dbb658f1c7e65b9b61af69048abc87a2db00a0eb"
+            ],
+            "index": "pypi",
+            "version": "==1.11.0"
+        },
         "urllib3": {
             "hashes": [
                 "sha256:06330f386d6e4b195fbfc736b297f58c5a892e4440e54d294d7004e3a9bbea1b",
                 "sha256:cc44da8e1145637334317feebd728bd869a35285b93cbb4cca2577da7e62db4f"
             ],
             "version": "==1.22"
+        },
+        "yajl-py": {
+            "hashes": [
+                "sha256:086d5031aac0dc456476e79ce32615455b5e7bc0c29bcece595e65a41b6a551a"
+            ],
+            "index": "pypi",
+            "version": "==2.1.2"
         }
     },
     "develop": {}
