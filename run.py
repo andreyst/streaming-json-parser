@@ -1,5 +1,6 @@
 import resource
 from decoder import Decoder
+from debug_parser import DebugParser
 import time
 import json
 
@@ -22,6 +23,13 @@ class EffectiveDecoder(Decoder):
 
             if not is_data:
                 break
+
+
+class DebugDecoder(Decoder):
+    def __init__(self, data_gen_local):
+        super().__init__(data_gen_local)
+        parser = DebugParser()
+        self.parser_gen = parser.parse(data_gen_local)
 
 
 def data_gen():
@@ -115,6 +123,13 @@ def main():
     # elapsed_time = time.time() - start
     # print("EffectiveDecoder took {:.3f}s".format(elapsed_time))
 
+    # start = time.time()
+    # decoder = DebugDecoder(full_data_gen())
+    # decoder.decode()
+    # elapsed_time = time.time() - start
+    # print("DebugDecoder took {:.3f}s".format(elapsed_time))
+    #
+    # s = next(full_data_gen())
     # start = time.time()
     # json.loads(s)
     # elapsed_time = time.time() - start
